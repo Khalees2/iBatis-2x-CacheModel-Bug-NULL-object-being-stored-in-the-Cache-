@@ -8,7 +8,7 @@ This repository demonstrates the issue of NULL value getting stored in the cache
 Below are the code snippets from which issue can be reporoduced:
 
 1. DAO layer java class which calls database procedure to fetch student details
-public class StudentDaoImpl {
+``` public class StudentDaoImpl {
 
 	private SqlMapClient sqlMap;
 	
@@ -39,11 +39,11 @@ public class StudentDaoImpl {
 		return student;
 	}
 	
-}
+} ```
 
 2. Java config class
 
-public class SQLMapConfig {
+``` public class SQLMapConfig {
 
 	private static final SqlMapClient sqlMap;
 	static {
@@ -60,11 +60,11 @@ public class SQLMapConfig {
 	public static SqlMapClient getSqlMapInstance () {
 		return sqlMap;
 	}
-}
+} ```
 
 3. Snippet from SQLMAPConfig.xml
 
-<cacheModel id="StudentCache" type="MEMORY">
+``` <cacheModel id="StudentCache" type="MEMORY">
 		<flushInterval seconds="600"/>
 		<property value="10" name="size"/>
 		<property name="reference-type" value="WEAK"/>
@@ -82,11 +82,11 @@ public class SQLMapConfig {
 
 <procedure id="getStudentDetails" parameterMap="getParameters" cacheModel="StudentCache">
 	{call pkcp_BPS.GET_STUDENT_DETAILS (?,?,?)}
-</procedure>
+</procedure> ```
 
 4. ResultHandler class mentioned in the above XML
 
-public class StudentResultHandler implements TypeHandlerCallback{
+``` public class StudentResultHandler implements TypeHandlerCallback{
 
 	public StudentResultHandler() {
 		super();
@@ -113,7 +113,7 @@ public class StudentResultHandler implements TypeHandlerCallback{
 		return student;
 	
 	}
-}
+} ```
 
 ## ERRORS
 When you call the db procedure:
