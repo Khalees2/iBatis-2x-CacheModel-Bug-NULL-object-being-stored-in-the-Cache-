@@ -11,3 +11,14 @@ Below are the code snippets from which issue can be reporoduced:
 2. Java SQLMapConfig class attached: JavaSQLMapConfigSnippet.txt
 3. XML Mapping to which calls Database procedure attached: SQLMapConfigXMLSnippet.txt
 4. Java Custom ResultHandler class: JavaStudentResultHandlerSnippet.txt
+
+## ERROR
+When DB procedure is called:
+
+
+2020-07-20 16:06:05,028 DEBUG [engine.cache.CacheModel] Cache 'StudentCache': stored object 'SERIALIZABLE_NULL_OBJECT'
+
+When DB procedure is called again:
+
+
+2020-07-20 16:07:06,760 DEBUG [engine.cache.CacheModel] Cache 'StudentCache': retrieved object 'SERIALIZABLE_NULL_OBJECT'
