@@ -22,3 +22,7 @@ When DB procedure is called again:
 
 
 2020-07-20 16:07:06,760 DEBUG [engine.cache.CacheModel] Cache 'StudentCache': retrieved object 'SERIALIZABLE_NULL_OBJECT'
+
+## Framework's function returning NULL:
+com.ibatis.sqlmap.engine.mapping.statement.MappedStatement#executeQueryForObject(StatementScope statementScope, Transaction trans, Object parameterObject,
+    Object resultObject) throws SQLException{}
