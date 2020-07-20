@@ -64,7 +64,7 @@ public class SQLMapConfig {
 
 3. Snippet from SQLMAPConfig.xml
 
-<cacheModel id="IMAPLandParcelCache" type="MEMORY">
+<cacheModel id="StudentCache" type="MEMORY">
 		<flushInterval seconds="600"/>
 		<property value="10" name="size"/>
 		<property name="reference-type" value="WEAK"/>
