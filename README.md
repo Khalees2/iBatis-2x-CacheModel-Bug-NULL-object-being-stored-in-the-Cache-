@@ -118,6 +118,8 @@ public class StudentResultHandler implements TypeHandlerCallback{
 ## ERRORS
 When you call the db procedure:
 2020-07-20 16:06:05,028 DEBUG [engine.cache.CacheModel] Cache 'StudentCache': stored object 'SERIALIZABLE_NULL_OBJECT'
-<span style="color: green"> Some green text </span>
+
+
+
 When you call the db procedure again.
 2020-07-20 16:07:06,760 DEBUG [engine.cache.CacheModel] Cache 'StudentCache': retrieved object 'SERIALIZABLE_NULL_OBJECT'
