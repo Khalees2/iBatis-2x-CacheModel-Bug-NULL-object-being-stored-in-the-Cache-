@@ -1,0 +1,28 @@
+public class StudentResultHandler implements TypeHandlerCallback{
+
+	public StudentResultHandler() {
+		super();
+	}
+	
+	
+	public Object getResult(ResultGetter getter) throws SQLException {
+	
+	StudentDTO student = null;
+	ResultSet rs = (ResultSet) getter.getObject();
+	
+	try {
+	
+	while(rs.next()) {
+	//fetch rows from the resultset returned from the procedure call
+	student.setName(rs.getString("name");
+	}
+	
+	}
+		finally {
+			JDBCUtil.closeResultSet(rs);
+		}
+
+		return student;
+	
+	}
+}

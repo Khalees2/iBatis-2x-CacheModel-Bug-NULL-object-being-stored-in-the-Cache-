@@ -1,0 +1,19 @@
+<cacheModel id="IMAPLandParcelCache" type="MEMORY">
+		<flushInterval seconds="600"/>
+		<property value="10" name="size"/>
+		<property name="reference-type" value="WEAK"/>
+</cacheModel>
+
+
+<parameterMap id="getParameters" class="map">
+
+		<parameter property="result" javaType="test.dto.StudentDTO" jdbcType="ORACLECURSOR" mode="OUT"
+			typeHandler="test.dao.StudentResultHandler"/>
+		<parameter property="studentId" jdbcType="NUMERIC" mode="IN" />
+		<parameter property = "applicationDate" jdbcType="DATE" mode="IN"/>
+		
+</parameterMap>
+
+<procedure id="getStudentDetails" parameterMap="getParameters" cacheModel="StudentCache">
+	{call pkcp_BPS.GET_STUDENT_DETAILS (?,?,?)}
+</procedure>
