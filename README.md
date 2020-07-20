@@ -8,7 +8,7 @@ This repository demonstrates the issue of NULL value getting stored in the cache
 Below are the code snippets from which issue can be reporoduced:
 
 1. DAO layer java class which calls database procedure to fetch student details
-``` public class StudentDaoImpl {
+```public class StudentDaoImpl {
 
 	private SqlMapClient sqlMap;
 	
@@ -39,7 +39,7 @@ Below are the code snippets from which issue can be reporoduced:
 		return student;
 	}
 	
-} ```
+}```
 
 2. Java config class
 
