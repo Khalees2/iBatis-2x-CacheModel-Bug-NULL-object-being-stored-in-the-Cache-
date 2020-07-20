@@ -7,36 +7,7 @@ This repository demonstrates the issue of NULL value getting stored in the cache
 
 Below are the code snippets from which issue can be reporoduced:
 
-1. DAO layer java class which calls database procedure to fetch student details
- ``` public class StudentDaoImpl {
-
-	private SqlMapClient sqlMap;
-	
-	public StudentDaoImpl() {
-		super();
-		sqlMap = SQLMapConfig.getSqlMapInstance(); //this class is shown below
-	}
-	
-	public StudentDTO getStudentDetails(String studentId,Date applicationDate) throws DataAccessException {
-
-		StudentDTO student = null;
-		Map params = new HashMap(3);
-		
-		params.put("studentId", studentId);
-		params.put("applicationDate", applicationDate);
-		params.put("result", student);
-
-		try {
-			sqlMap.queryForObject("getStudentDetails", params);
-		} catch (SQLException sqle) {
-			String message = "Could not retrieve Student details using id: "
-				+ studentId.toString();
-			log.error(message, sqle);
-			throw new DataAccessException(message, sqle);
-		}
-		student = (StudentDTO) params.get("result");
-
-		return student;
-	}
-	
-} ```
+1. DAO layer java class which calls database procedure to fetch student details attached: JavaDaoCallSnippet.txt
+2. Java SQLMapConfig class attached: JavaSQLMapConfigSnippet.txt
+3. XML Mapping to which calls Database procedure attached: SQLMapConfigXMLSnippet.txt
+4. Java Custom ResultHandler class: JavaStudentResultHandlerSnippet.txt
